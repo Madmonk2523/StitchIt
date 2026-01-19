@@ -727,7 +727,24 @@ section {
 
 /* Services Section */
 .services {
-    background: var(--bg-light);
+    background: transparent;
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: -1;
+}
+
+.services .container {
+    position: relative;
+    z-index: 1;
 }
 
 .services-grid {
@@ -804,7 +821,24 @@ section {
 
 /* Reviews Section */
 .reviews {
-    background: var(--bg-white);
+    background: transparent;
+    position: relative;
+}
+
+.reviews::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: -1;
+}
+
+.reviews .container {
+    position: relative;
+    z-index: 1;
 }
 
 .reviews-grid {
@@ -846,7 +880,24 @@ section {
 
 /* Contact Section */
 .contact {
-    background: var(--bg-light);
+    background: transparent;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: -1;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 1;
 }
 
 .contact-grid {
@@ -1008,27 +1059,27 @@ section {
     }
 }
 
-/* Animated Sections Background */
-.animated-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.section-bg {
-    position: absolute;
+/* Full Width Stripe Background */
+.full-width-stripes {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
-}
-
-.animated-section > .container {
-    position: relative;
-    z-index: 1;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Black Flowing Waves */
+.full-width-stripes .black-waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
 .black-waves {
     position: absolute;
     width: 100%;
