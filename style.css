@@ -206,16 +206,6 @@ body {
     z-index: 0;
 }
 
-/* Black Flowing Waves */
-.black-waves {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
 .wave {
     position: absolute;
     opacity: 0.15;
@@ -1018,7 +1008,35 @@ section {
     }
 }
 
-/* Responsive Design */
+/* Animated Sections Background */
+.animated-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.animated-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Black Flowing Waves */
+.black-waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
 @media (max-width: 1024px) {
     .nav-cta {
         display: none;
