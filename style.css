@@ -206,6 +206,131 @@ body {
     z-index: 0;
 }
 
+/* Black Flowing Waves */
+.black-waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
+    filter: blur(40px);
+}
+
+.wave-1 {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(ellipse 400px 300px at 50% 50%, rgba(0, 0, 0, 0.9), transparent);
+    top: -20%;
+    left: -10%;
+    animation: waveFlow 15s infinite ease-in-out;
+}
+
+.wave-2 {
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(ellipse 450px 350px at 50% 50%, rgba(0, 0, 0, 0.8), transparent);
+    bottom: -15%;
+    right: -5%;
+    animation: waveFlow 18s infinite ease-in-out reverse;
+    animation-delay: -5s;
+}
+
+.wave-3 {
+    width: 750px;
+    height: 750px;
+    background: radial-gradient(ellipse 375px 280px at 50% 50%, rgba(0, 0, 0, 0.85), transparent);
+    top: 50%;
+    left: 50%;
+    animation: waveFlow 20s infinite ease-in-out;
+    animation-delay: -10s;
+}
+
+/* Animated Black and White Stripes */
+.stripe-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.stripe {
+    position: absolute;
+    opacity: 0.12;
+    mix-blend-mode: overlay;
+}
+
+.stripe-1 {
+    width: 200px;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3) 10px,
+        rgba(255, 255, 255, 0.2) 10px,
+        rgba(255, 255, 255, 0.2) 20px
+    );
+    top: -50%;
+    left: 0%;
+    animation: stripeScroll 8s linear infinite;
+}
+
+.stripe-2 {
+    width: 250px;
+    height: 200%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.25) 15px,
+        rgba(255, 255, 255, 0.15) 15px,
+        rgba(255, 255, 255, 0.15) 30px
+    );
+    top: -50%;
+    right: 10%;
+    animation: stripeScroll 10s linear infinite reverse;
+    animation-delay: -2s;
+}
+
+.stripe-3 {
+    width: 300px;
+    height: 200%;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 20px,
+        rgba(255, 255, 255, 0.1) 20px,
+        rgba(255, 255, 255, 0.1) 40px
+    );
+    top: -50%;
+    left: 25%;
+    animation: stripeScroll 12s linear infinite;
+    animation-delay: -4s;
+}
+
+.stripe-4 {
+    width: 280px;
+    height: 200%;
+    background: repeating-linear-gradient(
+        60deg,
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.28) 12px,
+        rgba(255, 255, 255, 0.18) 12px,
+        rgba(255, 255, 255, 0.18) 24px
+    );
+    top: -50%;
+    right: 30%;
+    animation: stripeScroll 9s linear infinite reverse;
+    animation-delay: -3s;
+}
+
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
@@ -390,6 +515,30 @@ body {
 }
 
 /* Animations */
+@keyframes waveFlow {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(100px, -80px) rotate(45deg);
+    }
+    50% {
+        transform: translate(-80px, 100px) rotate(90deg);
+    }
+    75% {
+        transform: translate(80px, 80px) rotate(135deg);
+    }
+}
+
+@keyframes stripeScroll {
+    0% {
+        transform: translateY(0) skewY(-2deg);
+    }
+    100% {
+        transform: translateY(100%) skewY(-2deg);
+    }
+}
+
 @keyframes float {
     0%, 100% {
         transform: translate(0, 0) scale(1) rotate(0deg);
@@ -986,8 +1135,13 @@ section {
         font-size: 1rem;
     }
 
-    .gradient-orb {
-        filter: blur(60px);
+    .wave {
+        opacity: 0.1;
+        filter: blur(30px);
+    }
+
+    .stripe {
+        opacity: 0.08;
     }
 
     .orb-1 { width: 350px; height: 350px; }
