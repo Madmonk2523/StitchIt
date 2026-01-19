@@ -13,27 +13,36 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
                 <img src="logo.jpg" alt="Stitch It Logo" class="logo">
                 <h1>Stitch It</h1>
-            </div>
+            </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item nav-cta">
+                    <a href="tel:5166479980" class="nav-link cta-button">📱 Call Now</a>
+                </li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="animated-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="gradient-orb orb-4"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <img src="logo.jpg" alt="Stitch It Logo" class="hero-logo">

@@ -1,32 +1,30 @@
 // Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
+const navbar = document.querySelector('.navbar');
 
 hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-    
-    // Animate hamburger icon
-    const spans = hamburger.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        document.body.style.overflow = '';
     });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });
 
 // Smooth scrolling for anchor links
@@ -48,23 +46,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Navbar scroll effect
 let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    // Hide navbar on scroll down, show on scroll up
     if (currentScroll <= 0) {
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        navbar.style.transform = 'translateY(0)';
         return;
     }
     
     if (currentScroll > lastScroll && currentScroll > 80) {
-        // Scrolling down
         navbar.style.transform = 'translateY(-100%)';
     } else {
-        // Scrolling up
         navbar.style.transform = 'translateY(0)';
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
     }
     
     lastScroll = currentScroll;
