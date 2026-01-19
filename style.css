@@ -242,85 +242,6 @@ body {
     animation-delay: -10s;
 }
 
-/* Animated Black and White Stripes */
-.stripe-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
-.stripe {
-    position: absolute;
-    opacity: 0.12;
-    mix-blend-mode: overlay;
-}
-
-.stripe-1 {
-    width: 200px;
-    height: 200%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3) 10px,
-        rgba(255, 255, 255, 0.2) 10px,
-        rgba(255, 255, 255, 0.2) 20px
-    );
-    top: -50%;
-    left: 0%;
-    animation: stripeScroll 8s linear infinite;
-}
-
-.stripe-2 {
-    width: 250px;
-    height: 200%;
-    background: repeating-linear-gradient(
-        -45deg,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.25) 15px,
-        rgba(255, 255, 255, 0.15) 15px,
-        rgba(255, 255, 255, 0.15) 30px
-    );
-    top: -50%;
-    right: 10%;
-    animation: stripeScroll 10s linear infinite reverse;
-    animation-delay: -2s;
-}
-
-.stripe-3 {
-    width: 300px;
-    height: 200%;
-    background: repeating-linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.2) 20px,
-        rgba(255, 255, 255, 0.1) 20px,
-        rgba(255, 255, 255, 0.1) 40px
-    );
-    top: -50%;
-    left: 25%;
-    animation: stripeScroll 12s linear infinite;
-    animation-delay: -4s;
-}
-
-.stripe-4 {
-    width: 280px;
-    height: 200%;
-    background: repeating-linear-gradient(
-        60deg,
-        rgba(0, 0, 0, 0.28),
-        rgba(0, 0, 0, 0.28) 12px,
-        rgba(255, 255, 255, 0.18) 12px,
-        rgba(255, 255, 255, 0.18) 24px
-    );
-    top: -50%;
-    right: 30%;
-    animation: stripeScroll 9s linear infinite reverse;
-    animation-delay: -3s;
-}
-
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
@@ -517,15 +438,6 @@ body {
     }
     75% {
         transform: translate(80px, 80px) rotate(135deg);
-    }
-}
-
-@keyframes stripeScroll {
-    0% {
-        transform: translateY(0) skewY(-2deg);
-    }
-    100% {
-        transform: translateY(100%) skewY(-2deg);
     }
 }
 
@@ -727,19 +639,7 @@ section {
 
 /* Services Section */
 .services {
-    background: transparent;
-    position: relative;
-}
-
-.services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: white;
-    z-index: -1;
+    background: var(--bg-light);
 }
 
 .services .container {
@@ -821,19 +721,7 @@ section {
 
 /* Reviews Section */
 .reviews {
-    background: transparent;
-    position: relative;
-}
-
-.reviews::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: white;
-    z-index: -1;
+    background: var(--bg-white);
 }
 
 .reviews .container {
@@ -880,19 +768,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: transparent;
-    position: relative;
-}
-
-.contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: white;
-    z-index: -1;
+    background: var(--bg-light);
 }
 
 .contact .container {
